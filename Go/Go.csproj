@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DGen.Common\DGen.Common.csproj" />
+      <ProjectReference Include="..\DGen.Models\DGen.Models.csproj" />
+    </ItemGroup>
+
+</Project>
