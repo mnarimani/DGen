@@ -4,10 +4,10 @@ namespace DGen.Models
 {
     public class FieldDeclInfo
     {
-        public bool IsReadonly;
-        public string Name;
-        public string Type;
-        public List<string> Docs;
+        public string Name { get; set; }
+        public string Type { get; set; }
         public bool IsNullable { get; set; }
+        public List<string> Docs { get; set; }
+        public List<string> Attributes { get; } = new List<string>();
     }
 }

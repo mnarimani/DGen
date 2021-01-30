@@ -19,14 +19,24 @@ continue     for          import       return       var
                 .Replace("\r", " "),
             " +", ",").Split(',').ToList();
 
-        public static string RemoveMemberName(this string doc, string name)
+        public static string RemoveWordFromStart(this string str, string name)
         {
-            doc = doc.Trim();
+            str = str.Trim();
 
-            if (!doc.StartsWith(name, true, CultureInfo.InvariantCulture))
-                return doc;
+            if (!str.StartsWith(name, true, CultureInfo.InvariantCulture))
+                return str;
 
-            return doc.Remove(0, name.Length).Trim();
+            return str.Remove(0, name.Length).Trim();
+        }
+        
+        public static string RemoveWordFromEnd(this string str, string name)
+        {
+            str = str.Trim();
+
+            if (!str.EndsWith(name, true, CultureInfo.InvariantCulture))
+                return str;
+
+            return str.Remove(str.Length - name.Length, name.Length).Trim();
         }
 
         public static string ToValidTypeName(this string t)

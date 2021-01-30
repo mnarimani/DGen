@@ -2,6 +2,6 @@
 {
     public interface IFileNameGenerator
     {
-        string GetFileName(string className);
+        string GetFilePath(string subPath, string className);
     }
 }

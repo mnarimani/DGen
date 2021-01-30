@@ -1,12 +1,22 @@
-﻿using DGen.Common;
+﻿using System.IO;
+using DGen.Common;
 
 namespace Go
 {
     public class GoFileNameGenerator : IFileNameGenerator
     {
-        public string GetFileName(string className)
+        private readonly string _baseDirectory;
+
+        public GoFileNameGenerator(string baseDirectory)
         {
-            return className.Replace("_", "").ToLower() + ".go";
+            _baseDirectory = baseDirectory;
+        }
+
+        public string GetFilePath(string subPath, string className)
+        {
+            string fileName = className.Replace("_", "").ToLower() + ".go";
+
+            return Path.Combine(_baseDirectory, subPath.ToLower(), fileName);
         }
     }
 }
